@@ -1,0 +1,6 @@
+FROM golang:latest
+WORKDIR /go/src/hello
+COPY . .
+RUN GO111MODULE=off go get -d -v ./...
+RUN GO111MODULE=off go install -v ./...
+CMD ["hello"]
